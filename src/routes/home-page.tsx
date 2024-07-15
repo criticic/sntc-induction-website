@@ -116,10 +116,10 @@ function HomePage() {
   return (
     <>
       <div className="">
-        <div className="font-serif text-7xl">Science &</div>
-        <div className="font-serif text-7xl">Technology Council</div>
-        <div className="mt-4 font-serif text-4xl">IIT (BHU) Varanasi</div>
-        <div className="mt-4 text-lg">
+        <div className="font-serif text-5xl md:text-6xl lg:text-7xl">Science &</div>
+        <div className="font-serif text-5xl md:text-6xl lg:text-7xl">Technology Council</div>
+        <div className="mt-4 font-serif text-2xl md:text-3xl lg:text-4xl">IIT (BHU) Varanasi</div>
+        <div className="mt-4 text-base md:text-lg lg:text-xl">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed modi
           corrupti aliquid amet obcaecati adipisci temporibus. Commodi,
           cupiditate quidem. Veritatis eaque vero asperiores nam eligendi omnis
@@ -127,7 +127,7 @@ function HomePage() {
         </div>
       </div>
       <div className="mt-8">
-        <div className="text-2xl font-bold text-orange-600">Schedule</div>
+        <div className="text-xl md:text-2xl lg:text-3xl font-bold text-orange-600">Schedule</div>
         <div className="mt-4 grid grid-cols-1 gap-4">
           {clubs.map((club, index) => (
             <ClubCard key={index} club={club} />
