@@ -5,7 +5,8 @@ import "./index.css";
 import { ClerkProvider } from "@clerk/clerk-react";
 import App from "./App";
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");

@@ -10,8 +10,8 @@ export default function App() {
     <Router>
       <header>
         <SignedOut>
-          <div className="flex items-center justify-center min-h-screen bg-orange-50">
-            <div className="p-2 bg-[orange] shadow-lg font-bold rounded-lg">
+          <div className="flex min-h-screen items-center justify-center bg-orange-50">
+            <div className="rounded-lg bg-[orange] p-2 font-bold shadow-lg">
               <SignInButton />
             </div>
           </div>
