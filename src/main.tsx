@@ -1,28 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
-import HomePage from "./routes/home-page";
-import ErrorPage from "./routes/error-page";
-import VerifyAttendancePage from "./routes/verify-attendance";
-import RootPage from "./routes/root";
+import { ClerkProvider } from "@clerk/clerk-react";
+import App from "./App";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootPage />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/verify", element: <VerifyAttendancePage /> },
-    ],
-  },
-]);
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <App />
+    </ClerkProvider>
   </React.StrictMode>,
 );
