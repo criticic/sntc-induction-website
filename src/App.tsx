@@ -10,11 +10,11 @@ export default function App() {
     <Router>
       <header>
         <SignedOut>
-        <div className="flex items-center justify-center min-h-screen bg-orange-50">
-          <div className="p-2 bg-[orange] shadow-lg font-bold rounded-lg">
-            <SignInButton />
+          <div className="flex items-center justify-center min-h-screen bg-orange-50">
+            <div className="p-2 bg-[orange] shadow-lg font-bold rounded-lg">
+              <SignInButton />
+            </div>
           </div>
-        </div>
         </SignedOut>
       </header>
       <SignedIn>
@@ -23,7 +23,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="verify" element={<VerifyAttendancePage />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="" element={<ErrorPage />} />
         </Routes>
       </SignedIn>
     </Router>
